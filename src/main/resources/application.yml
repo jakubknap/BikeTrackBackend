@@ -1,5 +1,3 @@
-server:
-  port: 8088
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/bike_track
@@ -30,7 +28,18 @@ spring:
         connectiontimeout: 5000
         timeout: 3000
         writetimeout: 5000
+
 application:
+  security:
+    jwt:
+      secret-key: ZXMKQBBFCLH0ZPAHWN4YGVEGER5NUKD7FGD2321SADA213123DASDGFGFDGBNHJHGE
+      expiration: 8640000
+  mailing:
+    frontend:
+      activation-url: http://localhost:4200/activate-account
   file:
-    uploads:
+    upload:
       photos-output-path: ./uploads
+
+server:
+  port: 8088
