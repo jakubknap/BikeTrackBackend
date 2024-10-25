@@ -1,6 +1,6 @@
 services:
   postgres:
-    container_name: postgres
+    container_name: postgres-bike-track
     image: postgres
     environment:
       POSTGRES_USER: username
@@ -15,7 +15,7 @@ services:
       - bike-track
     restart: unless-stopped
   mail-dev:
-    container_name: mail-dev
+    container_name: mail-dev-bike-track
     image: maildev/maildev
     ports:
       - 1080:1080
@@ -25,4 +25,4 @@ networks:
     driver: bridge
 volumes:
   postgres:
-    driver: localó
+    driver: local
